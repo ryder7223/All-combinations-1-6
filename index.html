@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Character Combinations</title>
+    <style>
+        ul { font-family: Arial, sans-serif;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Character Combinations</h1>
+    <p>Here are all possible combinations of 6 characters:</p>
+    <ul id="combinations"></ul>
+
+    <script>
+      // Function to generate all combinations of 6 characters
+      function generateCombinations() {
+        const characters = "123456";
+        const combinations = [];
+        for (let i = 0; i < characters.length; i++) {
+          for (let j = 0; j < characters.length; j++) {
+            for (let k = 0; k < characters.length; k++) {
+              for (let l = 0; l < characters.length; l++) {
+                for (let m = 0; m < characters.length; m++) {
+                  for (let n = 0; n < characters.length; n++) {
+            combinations.push(characters[i] + characters[j] + characters[k] + characters[l] + characters[m] + characters[n]);
+                  }
+                }
+              }
+            }
+          }
+        }
+        return combinations;
+      }
+
+      // Generate and display all combinations of 2 characters
+      const combinations = generateCombinations();
+      const list = document.getElementById("combinations");
+      for (let i = 0; i < combinations.length; i++) {
+        const li = document.createElement("li");
+        li.textContent = combinations[i];
+        list.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
